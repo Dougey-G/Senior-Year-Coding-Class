@@ -1,0 +1,166 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		bool done = false;
+            while (done == false)
+
+            {
+                Console.WriteLine("Enter the value for which shape you want");
+                Console.WriteLine("1. X Square");
+                Console.WriteLine("2. X 3x3 Square");
+                Console.WriteLine("3. X 4x5 Square");
+                Console.WriteLine("4. Triangle");
+                Console.WriteLine("5. Backwards Triangle");
+                Console.WriteLine("6. Pyramid");
+                Console.WriteLine("7. Special");
+                Console.WriteLine("8. Backwards Special");
+                Console.WriteLine("9. Special the 3rd");
+                string result = Console.ReadLine();
+
+
+                if (result == "1")
+                {
+                    for (int i = 0; i < 1; i++)
+                    {
+                        for (int j = 0; j < 1; j++)
+                        {
+                            Console.Write("X");
+                        }
+                        Console.WriteLine();
+                    }
+                    Console.WriteLine();
+                }
+                else if (result == "2")
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        for (int j = 0; j < 3; j++)
+                        {
+                            Console.Write("X");
+                        }
+                        Console.WriteLine();
+                    }
+                    Console.WriteLine();
+                }
+
+                else if (result == "3")
+                // 4 by 5
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        for (int j = 0; j < 5; j++)
+                        {
+                            Console.Write("X");
+                        }
+                        Console.WriteLine();
+                    }
+                    Console.WriteLine();
+                }
+
+                // Triangle
+                else if (result == "4")
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        for (int j = 0; j < 5; j++)
+                        {
+                            if (j == i || j < i)
+                                Console.Write("X");
+                            else
+                                Console.Write(" ");
+                        }
+                        Console.WriteLine();
+                    }
+                    Console.WriteLine();
+                }
+
+                //Backwards Triangle
+                else if (result == "5")
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        for (int j = 0; j < 5; j++)
+                        {
+                            if (j == i || i < j)
+                                Console.Write("X");
+                            else
+                                Console.Write(" ");
+                        }
+                        Console.WriteLine();
+                    }
+                    Console.WriteLine();
+                }
+				
+				//Pyramid
+                else if (result == "6")
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        for (int j = 0; j < 3; j++)
+                        {
+                            if (j == i || i+1 > j)
+                                Console.Write("X");
+                            else
+                                Console.Write(" ");
+                        }
+                        Console.WriteLine();
+                    }
+                    Console.WriteLine();
+                }
+
+                //Special
+                else if (result == "7")
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        for (int j = 0; j < 5; j++)
+                        {
+                            if (j == i)
+                                Console.Write(" ");
+                            else
+                                Console.Write("X");
+                        }
+                        Console.WriteLine();
+                    }
+                    Console.WriteLine();
+                }
+
+                //Backwards Special
+                else if (result == "8")
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        for (int j = 0; j < 5; j++)
+                        {
+                            if (4 - j == i)
+                                Console.Write(" ");
+                            else
+                                Console.Write("X");
+                        }
+                        Console.WriteLine();
+                    }
+                    Console.WriteLine();
+                }
+
+                //Special the 3rd
+                else if (result == "9")
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        for (int j = 0; j < 3; j++)
+                        {
+                            if (j == i+2 )
+                                Console.Write("");
+                            else
+                                Console.Write("X");
+                        }
+                        Console.WriteLine();
+                    }
+                    Console.WriteLine();
+                }
+            }
+                }
+            }
