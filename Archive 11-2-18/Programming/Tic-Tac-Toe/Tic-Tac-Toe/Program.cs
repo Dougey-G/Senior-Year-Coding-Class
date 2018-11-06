@@ -15,7 +15,7 @@ namespace Tic_Tac_Toe
             //Console.ReadLine();
             //bool sides;
             //int x = 0;
-            char[,] Board = new char[3, 3];
+            char[,] Board = new char[4, 4];
             char result;
             for (int i = 0; i < Board.GetLength(0); i++)
             {
@@ -41,12 +41,14 @@ namespace Tic_Tac_Toe
 
             if (result == 'x')
             {
+                DrawBoard(Board);
                 Console.WriteLine("x player wins");
                 Console.ReadLine();
             }
 
             if (result == 'o')
             {
+                DrawBoard(Board);
                 Console.WriteLine("o player wins");
                 Console.ReadLine();
             }
@@ -64,8 +66,8 @@ namespace Tic_Tac_Toe
         /// <param name="board"></param>
         /// <returns>x if x wins, o if  o wins, ' ' otherwise</returns>
         static char VerifyBoard(char[,] board)
-        { 
-            if (board[0,0] == 'x' && board[0,1] == 'x' && board[0,2] == 'x')
+        {
+            if (board[0, 0] == 'x' && board[0, 1] == 'x' && board[0, 2] == 'x')
             {
                 return 'x';
             }
@@ -105,7 +107,7 @@ namespace Tic_Tac_Toe
                 return 'x';
             }
 
-            if(board[0, 0] == 'o' && board[1, 1] == 'o' && board[2, 2] == 'o')
+            if (board[0, 0] == 'o' && board[1, 1] == 'o' && board[2, 2] == 'o')
             {
                 return 'o';
             }
@@ -114,6 +116,39 @@ namespace Tic_Tac_Toe
             {
                 return 'o';
             }
+
+            if (board[3, 3] == 'o' && board[3, 2] == 'o' && board[3, 1] == 'o')
+            {
+                return 'o';
+            }
+
+            if (board[3, 2] == 'o' && board[3, 1] == 'o' && board[3, 0] == 'o')
+            {
+                return 'o';
+            }
+
+            if (board[3, 3] == 'x' && board[3, 2] == 'x' && board[3, 1] == 'x')
+            {
+                return 'x';
+            }
+
+            if (board[3, 2] == 'x' && board[3, 1] == 'x' && board[3, 0] == 'x')
+            {
+                return 'x';
+            }
+
+            if (board[0, 3] == 'x' && board[1, 3] == 'x' && board[2, 3] == 'x')
+            {
+                return 'x';
+            }
+
+            if (board[1, 3] == 'x' && board[2, 3] == 'x' && board[3, 3] == 'x')
+            {
+                return 'x';
+            }
+
+
+
             // if board no longer has any spaces, return t
             for (int i = 0; i < board.GetLength(0); i++)
             {
