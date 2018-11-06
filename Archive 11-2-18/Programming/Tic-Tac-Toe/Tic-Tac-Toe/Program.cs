@@ -129,6 +129,11 @@ namespace Tic_Tac_Toe
             return 't';
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="board"></param>
+        /// <param name="player"></param>
         static void ProcessTurn(char[,] board, char player)
         {
             Console.WriteLine(player + " it's your turn");
