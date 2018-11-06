@@ -30,38 +30,34 @@ namespace Tic_Tac_Toe
                 DrawBoard(Board);
                 ProcessTurn(Board, 'x');
                 result = VerifyBoard(Board);
+                if (result == 'x' || result == 't')
+                {
+                    break;
+                }
+                DrawBoard(Board);
                 ProcessTurn(Board, 'o');
-                result = ' ';
-            } while (result = 'x' || result = 'o');
-            
-            
-            ProcessTurn(Board, 'o');
-            ProcessTurn(Board, 'x');
-            ProcessTurn(Board, 'o');
-            ProcessTurn(Board, 'x');
-            ProcessTurn(Board, 'o');
-            ProcessTurn(Board, 'x');
-            ProcessTurn(Board, 'o');
-            ProcessTurn(Board, 'x');
-            ProcessTurn(Board, 'o');
-            ProcessTurn(Board, 'x');
-            ProcessTurn(Board, 'o');
-            Console.ReadLine();
+                result = VerifyBoard(Board);
+            } while (result == ' ');
 
-            //{
-            //    for (int i = 0; i < 1; i++)
-            //    {
-            //        for (int j = 0; j < 1; j++)
-            //        {
-            //            Console.Write("X");
-            //        }
-            //        Console.WriteLine();
-            //    }
-            //    Console.ReadLine();
-            //}
+            if (result == 'x')
+            {
+                Console.WriteLine("x player wins");
+                Console.ReadLine();
+            }
 
+            if (result == 'o')
+            {
+                Console.WriteLine("o player wins");
+                Console.ReadLine();
+            }
+
+            if (result == 't')
+            {
+                DrawBoard(Board);
+                Console.WriteLine("it's a tie");
+                Console.ReadLine();
+            }
         }
-
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +114,19 @@ namespace Tic_Tac_Toe
             {
                 return 'o';
             }
+            // if board no longer has any spaces, return t
+            for (int i = 0; i < board.GetLength(0); i++)
+            {
+                for (int j = 0; j < board.GetLength(1); j++)
+                {
+                    if (board[i, j] == ' ')
+                    {
+                        return ' ';
+                    }
+                }
+            }
 
-            return ' ';
+            return 't';
         }
 
         static void ProcessTurn(char[,] board, char player)
@@ -131,7 +138,6 @@ namespace Tic_Tac_Toe
             int y = int.Parse(Console.ReadLine());
             if (board[x, y] == ' ')
                 board[x, y] = player;
-            DrawBoard(board);
         }
 
         static void DrawBoard(char[,] board)
