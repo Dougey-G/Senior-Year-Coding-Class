@@ -16,6 +16,7 @@ namespace Tic_Tac_Toe
             //bool sides;
             //int x = 0;
             char[,] Board = new char[3, 3];
+            char result;
             for (int i = 0; i < Board.GetLength(0); i++)
             {
                 for (int j = 0; j < Board.GetLength(1); j++)
@@ -23,8 +24,17 @@ namespace Tic_Tac_Toe
                     Board[i, j] = ' ';
                 }
             }
-            DrawBoard(Board);
-            ProcessTurn(Board, 'x');
+
+            do
+            {
+                DrawBoard(Board);
+                ProcessTurn(Board, 'x');
+                result = VerifyBoard(Board);
+                ProcessTurn(Board, 'o');
+                result = ' ';
+            } while (result = 'x' || result = 'o');
+            
+            
             ProcessTurn(Board, 'o');
             ProcessTurn(Board, 'x');
             ProcessTurn(Board, 'o');
@@ -59,7 +69,56 @@ namespace Tic_Tac_Toe
         /// <returns>x if x wins, o if  o wins, ' ' otherwise</returns>
         static char VerifyBoard(char[,] board)
         { 
-            if //(three are same)
+            if (board[0,0] == 'x' && board[0,1] == 'x' && board[0,2] == 'x')
+            {
+                return 'x';
+            }
+
+            if (board[1, 0] == 'x' && board[1, 1] == 'x' && board[1, 2] == 'x')
+            {
+                return 'x';
+            }
+
+            if (board[2, 0] == 'x' && board[2, 1] == 'x' && board[2, 2] == 'x')
+            {
+                return 'x';
+            }
+
+            if (board[0, 0] == 'o' && board[0, 1] == 'o' && board[0, 2] == 'o')
+            {
+                return 'o';
+            }
+
+            if (board[1, 0] == 'o' && board[1, 1] == 'o' && board[1, 2] == 'o')
+            {
+                return 'o';
+            }
+
+            if (board[2, 0] == 'o' && board[2, 1] == 'o' && board[2, 2] == 'o')
+            {
+                return 'o';
+            }
+
+            if (board[0, 0] == 'x' && board[1, 1] == 'x' && board[2, 2] == 'x')
+            {
+                return 'x';
+            }
+
+            if (board[0, 2] == 'x' && board[1, 1] == 'x' && board[2, 0] == 'x')
+            {
+                return 'x';
+            }
+
+            if(board[0, 0] == 'o' && board[1, 1] == 'o' && board[2, 2] == 'o')
+            {
+                return 'o';
+            }
+
+            if (board[0, 2] == 'o' && board[1, 1] == 'o' && board[2, 0] == 'o')
+            {
+                return 'o';
+            }
+
             return ' ';
         }
 
