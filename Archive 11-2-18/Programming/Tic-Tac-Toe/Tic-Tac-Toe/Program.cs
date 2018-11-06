@@ -145,6 +145,10 @@ namespace Tic_Tac_Toe
                 board[x, y] = player;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="board"></param>
         static void DrawBoard(char[,] board)
         {
             for (int j = 0; j < board.GetLength(0); j++)
