@@ -117,6 +117,7 @@ namespace Tic_Tac_Toe
                 return 'o';
             }
 
+            // 4x4 Grid
             if (board[3, 3] == 'o' && board[3, 2] == 'o' && board[3, 1] == 'o')
             {
                 return 'o';
@@ -137,6 +138,16 @@ namespace Tic_Tac_Toe
                 return 'x';
             }
 
+            if (board[0, 3] == 'o' && board[1, 3] == 'o' && board[2, 3] == 'o')
+            {
+                return 'o';
+            }
+
+            if (board[1, 3] == 'o' && board[2, 3] == 'o' && board[3, 3] == 'o')
+            {
+                return 'o';
+            }
+
             if (board[0, 3] == 'x' && board[1, 3] == 'x' && board[2, 3] == 'x')
             {
                 return 'x';
@@ -147,6 +158,95 @@ namespace Tic_Tac_Toe
                 return 'x';
             }
 
+            if (board[0, 2] == 'x' && board[1, 2] == 'x' && board[2, 2] == 'x')
+            {
+                return 'x';
+            }
+
+            if (board[0, 1] == 'x' && board[1, 1] == 'x' && board[2, 1] == 'x')
+            {
+                return 'x';
+            }
+
+            if (board[0, 0] == 'x' && board[1, 0] == 'x' && board[2, 0] == 'x')
+            {
+                return 'x';
+            }
+
+            if (board[0, 0] == 'o' && board[1, 0] == 'o' && board[2, 0] == 'o')
+            {
+                return 'o';
+            }
+
+            if (board[0, 1] == 'o' && board[1, 1] == 'o' && board[2, 1] == 'o')
+            {
+                return 'o';
+            }
+
+            if (board[0, 2] == 'o' && board[1, 2] == 'o' && board[2, 2] == 'o')
+            {
+                return 'o';
+            }
+
+            if (board[0, 1] == 'x' && board[1, 2] == 'x' && board[2, 3] == 'x')
+            {
+                return 'x';
+            }
+
+            if (board[0, 3] == 'x' && board[1, 2] == 'x' && board[2, 1] == 'x')
+            {
+                return 'x';
+            }
+
+            if (board[0, 1] == 'o' && board[1, 2] == 'o' && board[2, 3] == 'o')
+            {
+                return 'o';
+            }
+
+            if (board[0, 3] == 'o' && board[1, 2] == 'o' && board[2, 1] == 'o')
+            {
+                return 'o';
+            }
+
+            if (board[1, 0] == 'x' && board[2, 1] == 'x' && board[3, 2] == 'x')
+            {
+                return 'x';
+            }
+
+            if (board[1, 2] == 'x' && board[2, 1] == 'x' && board[3, 0] == 'x')
+            {
+                return 'x';
+            }
+
+            if (board[1, 0] == 'o' && board[2, 1] == 'o' && board[3, 2] == 'o')
+            {
+                return 'o';
+            }
+
+            if (board[1, 2] == 'o' && board[2, 1] == 'o' && board[3, 0] == 'o')
+            {
+                return 'o';
+            }
+
+            if (board[1, 1] == 'x' && board[2, 2] == 'x' && board[3, 3] == 'x')
+            {
+                return 'x';
+            }
+
+            if (board[1, 3] == 'x' && board[2, 2] == 'x' && board[3, 1] == 'x')
+            {
+                return 'x';
+            }
+
+            if (board[1, 1] == 'o' && board[2, 2] == 'o' && board[3, 3] == 'o')
+            {
+                return 'o';
+            }
+
+            if (board[1, 3] == 'o' && board[2, 2] == 'o' && board[3, 1] == 'o')
+            {
+                return 'o';
+            }
 
 
             // if board no longer has any spaces, return t
