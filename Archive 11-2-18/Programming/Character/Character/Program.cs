@@ -56,13 +56,17 @@ namespace Character
             //{
             //    Console.WriteLine(character + "deleted");
             //}
-            return false;
-        
+            //return false;
 
-            //else if ((DeleteCharacter == false))
-            //{
-            //    Console.WriteLine(character + "not deleted");
-            //}
+            if (File.Exists("MyFile.txt"))
+            {
+                Console.WriteLine("The file exists.");
+            }
+
+            else if ((DeleteCharacter == false))
+            {
+                Console.WriteLine(character + "not deleted");
+            }
         }
         Character LoadCharacter(string characterName)
         {
