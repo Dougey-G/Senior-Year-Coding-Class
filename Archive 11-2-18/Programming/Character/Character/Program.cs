@@ -13,15 +13,12 @@ namespace Character
 
         }
 
-        class Character
+        Character CreateCharacter()
         {
             string CharacterName;
-            // Name
-            //{
-            // Console.ReadLine(string.Parse) or string.Parse(Console.ReadLine);
-            // Console.WriteLine("Please enter your name)
-            //}
-
+            Console.WriteLine("Please enter your name");
+            CharacterName = Console.ReadLine();
+            
             string Height;
             // Height
             //{
@@ -43,7 +40,43 @@ namespace Character
             string HairColor;
             // Blonde, Brunette, Black, Red Head/Ginger, 
             // Hair Color
+            return null;
+        }
+        void ModifyCharacter(Character character)
+        {
+            Console.WriteLine("what attribute do you want to change");
+        }
+        void SaveCharacter(Character character)
+        {
+            //LocalDataStoreSlot
+        }
+        bool DeleteCharacter(List<Character> characters, string characterName)
+        {
+            //if (DeleteCharacter == true)
+            //{
+            //    Console.WriteLine(character + "deleted");
+            //}
+            return false;
+        
 
+            //else if ((DeleteCharacter == false))
+            //{
+            //    Console.WriteLine(character + "not deleted");
+            //}
+        }
+        Character LoadCharacter(string characterName)
+        {
+            createCharacter = true;
+            return createCharacter;
+        }
+        List<Character> LoadCharcters()
+        {
+            loadCharacter = character; 
+            return null;
+        }
+        void ListCharacters(List<Character> characters)
+        {
+            //parameter attributes
         }
     }
 }
