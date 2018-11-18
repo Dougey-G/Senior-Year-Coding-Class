@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Character
 {
@@ -63,10 +64,6 @@ namespace Character
                 Console.WriteLine("The file exists.");
             }
 
-            else if ((DeleteCharacter == false))
-            {
-                Console.WriteLine(character + "not deleted");
-            }
         }
         Character LoadCharacter(string characterName)
         {

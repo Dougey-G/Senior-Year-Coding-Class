@@ -44,7 +44,6 @@ namespace Character
             this.EyeColor = EyeColor;
             this.SkinColor = SkinColor;
             this.HairColor = HairColor;
-
         }
     }
 }

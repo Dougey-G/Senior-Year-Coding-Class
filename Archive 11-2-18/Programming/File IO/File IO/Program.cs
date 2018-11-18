@@ -29,7 +29,7 @@ namespace File_IO
             //path = @"C:\Users\171282\Documents\Senior-Year-Coding-Class\Archive 11-2-18\Example.txt";
             //path = AppDomain.CurrentDomain.BaseDirectory + @"Example.txt";
 
-            string path = @"C:\Users\171282\Documents\Senior-Year-Coding-Class\Archive 11-2-18\Example.txt";
+            string path = @"C:\Users\171282\Documents\Dougey's Folder\Senior-Year-Coding-Class\Archive 11-2-18\Example.txt";
 
             List<string> file = new List<string>();
             using (StreamReader sr = new StreamReader(path))
