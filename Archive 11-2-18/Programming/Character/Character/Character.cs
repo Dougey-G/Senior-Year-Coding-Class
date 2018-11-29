@@ -8,42 +8,21 @@ namespace Character
 {
     class Character
     {
-        public string CharacterName;
-        // Name
-        //{
-        // Console.ReadLine(string.Parse) or string.Parse(Console.ReadLine);
-        // Console.WriteLine("Please enter your name)
-        //}
-
+        public string Name;
         public string Height;
-        // Height
-        //{
-        // int.Parse(Console.ReadLine());
-        // result = '0';
-        // Console.WriteLine("Please enter your height in inches(Hint: 12 inches = 1ft)":
-        // 
-        //}
-
         public string EyeColor;
-        // Red, Blue, Green, Yellow, Purple, Orange, Light Green, Light Blue, Hazel
-        // Eye Color
-
         public string SkinColor;
-        // string.Parse(Console.ReadLine)
-        // White, Tan, Brown/Black (African American) 
-        // Skin Color
-
         public string HairColor;
-        // Blonde, Brunette, Black, Red Head/Ginger, 
-        // Hair Color
-
-        public Character(string CharacterName, string Height, string EyeColor, string SkinColor, string HairColor)
+        public string ShirtColor;
+        
+        public Character(string Name, string Height, string EyeColor, string SkinColor, string HairColor, string ShirtColor)
         {
-            this.CharacterName = CharacterName;
+            this.Name = Name;
             this.Height = Height;
             this.EyeColor = EyeColor;
             this.SkinColor = SkinColor;
             this.HairColor = HairColor;
+            this.ShirtColor = ShirtColor;
         }
     }
 }
