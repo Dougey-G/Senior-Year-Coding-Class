@@ -13,9 +13,11 @@ namespace Character
         {
             string result;
 
+            //Moved current outside of do-while scope so it doesn't get recreated every time we loop through the menu.
+            //This way, when we load into current with the 4th menu option, it persists through menu calls.
+            Character current = new Character("", "", "", "", "", "");
             do
             {
-                Character current = new Character("", "", "", "", "", "");
                 Console.WriteLine("1. Create Character");
                 Console.WriteLine("2. Modify Character");
                 Console.WriteLine("3. Delete Character");
@@ -36,17 +38,23 @@ namespace Character
 
                 if (result == "3")
                 {
+                    //Added a prompt to ask the user who they want to delete.
+                    Console.WriteLine("What is the name of the character you want to delete?");
                     DeleteCharacter(Console.ReadLine());
                 }
 
                 if (result == "4")
                 {
-                    LoadCharacter(Console.ReadLine());
+                    //Added prompt to ask the user who they want to load
+                    Console.WriteLine("What is the name of the character you want to load?");
+
+                    //Remember, LoadCharacter has a return type, therefore we should use it!
+                    current = LoadCharacter(Console.ReadLine());
                 }
 
                 if (result == "5")
                 {
-                    LoadCharacter(Console.ReadLine());
+                    //We don't necesarily want to load a character before we print it. Use 4 to load before you print.
                     PrintCharacter(current);
                 }
 
