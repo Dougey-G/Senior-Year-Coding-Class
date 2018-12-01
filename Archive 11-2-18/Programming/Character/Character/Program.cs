@@ -46,7 +46,8 @@ namespace Character
 
                 if (result == "5")
                 {
-                    // PrintCharacter
+                    LoadCharacter(Console.ReadLine());
+                    PrintCharacter(current);
                 }
 
 
@@ -62,7 +63,7 @@ namespace Character
             string Name;
             Console.WriteLine("Please enter your character's Name");
             Name = Console.ReadLine();
-            Console.WriteLine("Please enter your character's Height");
+            Console.WriteLine("Please enter your character's Height (12 inches = 1 foot)");
             string Height = Console.ReadLine();
             Console.WriteLine("Please enter your character's Eye Color");
             string EyeColor = Console.ReadLine();
@@ -76,6 +77,8 @@ namespace Character
             Character character = new Character(Name, Height, EyeColor, SkinColor, HairColor, ShirtColor);
 
             SaveCharacter(character);
+
+            Console.WriteLine();
 
             return character;
 
@@ -130,7 +133,7 @@ namespace Character
             string path = AppDomain.CurrentDomain.BaseDirectory + character.Name + @".txt";
             if (File.Exists(path))
             {
-                Console.WriteLine("file exists, would you like to overwrite? Y, N.");
+                Console.WriteLine("File exists, would you like to overwrite? Y, N.");
                 if (Console.ReadLine()[0] == 'y')
                 {
                     using (StreamWriter sw = new StreamWriter(path))
@@ -142,7 +145,7 @@ namespace Character
                         sw.WriteLine(character.HairColor);
                         sw.WriteLine(character.ShirtColor);
                     }
-                    Console.WriteLine("file overwritten");
+                    Console.WriteLine("File overwritten");
                 }
                 else
                     Console.WriteLine("Nothing overwritten");
@@ -193,8 +196,7 @@ namespace Character
 
         static Character LoadCharacter(string Name)
         {
-            string path;
-            path = AppDomain.CurrentDomain.BaseDirectory + Name + ".txt";
+            string path = AppDomain.CurrentDomain.BaseDirectory + Name + @".txt";
             Character character;
             using (StreamReader sr = new StreamReader(path))
             {
@@ -204,7 +206,7 @@ namespace Character
             return character;
         }
 
-        void PrintCharacter(Character character)
+       static void PrintCharacter(Character character)
         {
             Console.WriteLine(character.Name);
             Console.WriteLine(character.Height);
