@@ -13,9 +13,11 @@ namespace Character
         {
             string result;
 
+            //Moved current outside of do-while scope so it doesn't get recreated every time we loop through the menu.
+            //This way, when we load into current with the 4th menu option, it persists through menu calls.
+            Character current = new Character("", "", "", "", "", "");
             do
             {
-                Character current = new Character("", "", "", "", "", "");
                 Console.WriteLine("1. Create Character");
                 Console.WriteLine("2. Modify Character");
                 Console.WriteLine("3. Delete Character");
@@ -36,24 +38,28 @@ namespace Character
 
                 if (result == "3")
                 {
+                    //Added a prompt to ask the user who they want to delete.
+                    Console.WriteLine("What is the name of the character you want to delete?");
                     DeleteCharacter(Console.ReadLine());
                 }
 
                 if (result == "4")
                 {
-                    LoadCharacter(Console.ReadLine());
+                    //Added prompt to ask the user who they want to load
+                    Console.WriteLine("What is the name of the character you want to load?");
+
+                    //Remember, LoadCharacter has a return type, therefore we should use it!
+                    current = LoadCharacter(Console.ReadLine());
+                    Console.WriteLine();
                 }
 
                 if (result == "5")
                 {
-                    // PrintCharacter
+                    //We don't necesarily want to load a character before we print it. Use 4 to load before you print.
+                    PrintCharacter(current);
+                    Console.WriteLine();
                 }
-
-
             } while (result != "6");
-            
-
-           
         }
 
         //This Method is Good
@@ -62,7 +68,7 @@ namespace Character
             string Name;
             Console.WriteLine("Please enter your character's Name");
             Name = Console.ReadLine();
-            Console.WriteLine("Please enter your character's Height");
+            Console.WriteLine("Please enter your character's Height (12 inches = 1 foot)");
             string Height = Console.ReadLine();
             Console.WriteLine("Please enter your character's Eye Color");
             string EyeColor = Console.ReadLine();
@@ -77,60 +83,61 @@ namespace Character
 
             SaveCharacter(character);
 
+            Console.WriteLine();
+
             return character;
-
         }
-
 
         static void ModifyCharacter(Character character)
         {
-            string result = Console.ReadLine();
-
             Console.WriteLine("what attribute do you want to change?");
             Console.WriteLine("1. Height");
             Console.WriteLine("2. EyeColor");
             Console.WriteLine("3. SkinColor");
             Console.WriteLine("4. HairColor");
             Console.WriteLine("5. ShirtColor");
+            Console.WriteLine();
 
-            if (result == "1")
+            string result2 = Console.ReadLine();
+
+            if (result2 == "1")
             {
                 Console.WriteLine("Please enter your New Height for your character");
                 character.Height = Console.ReadLine();
             }
 
-            if (result == "2")
+            if (result2 == "2")
             {
                 Console.WriteLine("Please enter your New EyeColor for your character");
                 character.EyeColor = Console.ReadLine();
             }
 
-            if (result == "3")
+            if (result2 == "3")
             {
                 Console.WriteLine("Please enter your New SkinColor for your character");
                 character.SkinColor = Console.ReadLine();
             }
 
-            if (result == "4")
+            if (result2 == "4")
             {
                 Console.WriteLine("Please enter your New HairColor for your character");
                 character.HairColor = Console.ReadLine();
             }
 
-            if (result == "5")
+            if (result2 == "5")
             {
                 Console.WriteLine("Please enter your New ShirtColor for your character");
                 character.ShirtColor = Console.ReadLine();
             }
-            //character.CharacterName = modifyCharacter(CharacterName, Height, EyeColor, SkinColor, HairColor) or ModifyCharacter;
-
+            SaveCharacter(character);
         }
+
         static void SaveCharacter(Character character)
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + character.Name + @".txt";
             if (File.Exists(path))
             {
-                Console.WriteLine("file exists, would you like to overwrite? Y, N.");
+                Console.WriteLine(character.Name + " exists, would you like to overwrite? Y, N.");
                 if (Console.ReadLine()[0] == 'y')
                 {
                     using (StreamWriter sw = new StreamWriter(path))
@@ -142,7 +149,8 @@ namespace Character
                         sw.WriteLine(character.HairColor);
                         sw.WriteLine(character.ShirtColor);
                     }
-                    Console.WriteLine("file overwritten");
+                    Console.WriteLine("File overwritten");
+                    Console.WriteLine();
                 }
                 else
                     Console.WriteLine("Nothing overwritten");
@@ -158,30 +166,26 @@ namespace Character
                     sw.WriteLine(character.HairColor);
                     sw.WriteLine(character.ShirtColor);
                 }
-                Console.WriteLine("File created");
+                Console.WriteLine(character.Name + " created");
             }
-
         }
+
         static bool DeleteCharacter(string Name)
         {
-            //if (DeleteCharacter == true)
-            //{
-            //    Console.WriteLine(character + "deleted");
-            //}
-            //return false;
             string path;
             path = AppDomain.CurrentDomain.BaseDirectory + Name + @".txt";
 
             if (File.Exists(path))
             {
-                //Console.WriteLine("The file exists.");
-                foreach (string filepath in Directory.EnumerateFiles(path, "*.xml"))
+                Character character;
+                using (StreamReader sr = new StreamReader(path))
                 {
-                    string contents = File.ReadAllText(path);
+                    character = new Character(sr.ReadLine(), sr.ReadLine(), sr.ReadLine(), sr.ReadLine(), sr.ReadLine(), sr.ReadLine());
                 }
+                Console.WriteLine(Name + " deleted");
                 File.Delete(path);
+                Console.WriteLine();
                 return true;
-
             }
 
             else
@@ -193,18 +197,17 @@ namespace Character
 
         static Character LoadCharacter(string Name)
         {
-            string path;
-            path = AppDomain.CurrentDomain.BaseDirectory + Name + ".txt";
+            string path = AppDomain.CurrentDomain.BaseDirectory + Name + @".txt";
             Character character;
             using (StreamReader sr = new StreamReader(path))
             {
                 character = new Character(sr.ReadLine(), sr.ReadLine(), sr.ReadLine(), sr.ReadLine(), sr.ReadLine(), sr.ReadLine());
-
             }
+            Console.WriteLine(Name + " loaded");
             return character;
         }
 
-        void PrintCharacter(Character character)
+        static void PrintCharacter(Character character)
         {
             Console.WriteLine(character.Name);
             Console.WriteLine(character.Height);
@@ -212,16 +215,6 @@ namespace Character
             Console.WriteLine(character.SkinColor);
             Console.WriteLine(character.HairColor);
             Console.WriteLine(character.ShirtColor);
-        }
-
-       //static List<Character> LoadCharcters()
-       // {
-       //     //loadCharacter = Character;
-       //     return null;
-       // }
-        static void ListCharacters(List<Character> characters)
-        {
-            //parameter attributes
         }
     }
 }
