@@ -71,6 +71,7 @@
     <Compile Include="Assets\_Complete-Game\Scripts\Done_PlayerController.cs" />
     <Compile Include="Assets\_Complete-Game\Scripts\Done_RandomRotator.cs" />
     <Compile Include="Assets\_Complete-Game\Scripts\Done_WeaponController.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/171282/Documents/Senior-Year-Coding-Class/Archive 11-2-18/Programming/Final Project/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

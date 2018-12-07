@@ -2,7 +2,7 @@
 using System.Collections;
 
 [System.Serializable]
-public class Done_Boundary 
+public class Boundary 
 {
 	public float xMin, xMax, zMin, zMax;
 }
@@ -11,7 +11,7 @@ public class Done_PlayerController : MonoBehaviour
 {
 	public float speed;
 	public float tilt;
-	public Done_Boundary boundary;
+	public Boundary boundary;
 
 	public GameObject shot;
 	public Transform shotSpawn;
