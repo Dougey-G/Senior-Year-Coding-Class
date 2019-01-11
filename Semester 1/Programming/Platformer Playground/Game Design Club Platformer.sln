@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game Design Club Platformer", "Assembly-CSharp.csproj", "{D85089EA-9514-EC67-CCA0-AE33F0303A0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D85089EA-9514-EC67-CCA0-AE33F0303A0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D85089EA-9514-EC67-CCA0-AE33F0303A0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D85089EA-9514-EC67-CCA0-AE33F0303A0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D85089EA-9514-EC67-CCA0-AE33F0303A0C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
