@@ -43,7 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Allies.cs" />
     <Compile Include="Animal.cs" />
+    <Compile Include="DonkeyKong.cs" />
+    <Compile Include="Enemy.cs" />
+    <Compile Include="Epona.cs" />
+    <Compile Include="Mario.cs" />
     <Compile Include="Octoomba.cs" />
     <Compile Include="Piranha Plant.cs" />
     <Compile Include="Yoshi.cs" />

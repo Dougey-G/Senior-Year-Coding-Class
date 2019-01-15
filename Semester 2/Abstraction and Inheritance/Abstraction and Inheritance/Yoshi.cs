@@ -6,23 +6,28 @@ using System.Threading.Tasks;
 
 namespace Abstraction_and_Inheritance
 {
-    class Yoshi : Animal
+    class Yoshi : Allies
     {
-        public Yoshi(float weight, float height)
-            : base(weight, height)
+        public float NumberofEggs;
+        public Yoshi(float weight, float height, float FriendshipLevel, float NumberofEggs) : base(weight, height, FriendshipLevel)
         {
             isCarnivorous = false;
+            this.NumberofEggs = NumberofEggs;
         }
 
         public override void Eat()
         {
             base.Eat();
-            Console.WriteLine("Wigglers!");
+            Console.WriteLine(" Wigglers!");
+            Console.WriteLine();
         }
 
         public override void MakeSound()
         {
-            Console.WriteLine("YOSHI!");
+            Console.WriteLine("YOSHI! I have " + NumberofEggs + " Eggs.");
+            
         }
+
+
     }
 }

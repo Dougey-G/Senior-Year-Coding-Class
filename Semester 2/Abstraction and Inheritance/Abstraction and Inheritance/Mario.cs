@@ -6,24 +6,26 @@ using System.Threading.Tasks;
 
 namespace Abstraction_and_Inheritance
 {
-    class Octoomba : Enemy
+    class Mario : Allies
     {
-        public Octoomba(float weight, float height, float ThreatLevel)
-            : base(weight, height, ThreatLevel)
+        public string CurrentPowerUp;
+        public Mario(float weight, float height, float FriendshipLevel, string CurrentPowerUp) : base(weight, height, FriendshipLevel)
         {
             isCarnivorous = false;
+            this.CurrentPowerUp = CurrentPowerUp;
         }
 
         public override void Eat()
         {
             base.Eat();
-            Console.WriteLine(" Rocks!");
+            Console.WriteLine(" Mushrooms!");
             Console.WriteLine();
         }
 
         public override void MakeSound()
         {
-            Console.WriteLine("Pomp!");
+            Console.WriteLine("It's a me, "+ CurrentPowerUp + " Mario.");
+            
         }
     }
 }

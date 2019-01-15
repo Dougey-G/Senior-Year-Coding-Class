@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Abstraction_and_Inheritance
 {
-    class Octoomba : Enemy
+    class DonkeyKong: Allies
     {
-        public Octoomba(float weight, float height, float ThreatLevel)
-            : base(weight, height, ThreatLevel)
+
+        public DonkeyKong(float weight, float height, float FriendshipLevel)
+            : base(weight, height, FriendshipLevel)
         {
             isCarnivorous = false;
         }
@@ -17,13 +18,13 @@ namespace Abstraction_and_Inheritance
         public override void Eat()
         {
             base.Eat();
-            Console.WriteLine(" Rocks!");
+            Console.WriteLine(" Bananas!");
             Console.WriteLine();
         }
 
         public override void MakeSound()
         {
-            Console.WriteLine("Pomp!");
+            Console.WriteLine("OO OO AW!");
         }
     }
 }

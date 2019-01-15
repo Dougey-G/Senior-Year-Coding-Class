@@ -6,24 +6,26 @@ using System.Threading.Tasks;
 
 namespace Abstraction_and_Inheritance
 {
-    class Octoomba : Enemy
+    class Epona : Allies
     {
-        public Octoomba(float weight, float height, float ThreatLevel)
-            : base(weight, height, ThreatLevel)
+        public float RunSpeed;
+        public Epona(float weight, float height, float FriendshipLevel, float RunSpeed) : base(weight, height, FriendshipLevel)
         {
             isCarnivorous = false;
+            this.RunSpeed = RunSpeed;
         }
 
         public override void Eat()
         {
             base.Eat();
-            Console.WriteLine(" Rocks!");
+            Console.WriteLine(" Apples!");
             Console.WriteLine();
         }
 
         public override void MakeSound()
         {
-            Console.WriteLine("Pomp!");
+            Console.WriteLine("I go " + RunSpeed + " Speed.");
+            
         }
     }
 }
