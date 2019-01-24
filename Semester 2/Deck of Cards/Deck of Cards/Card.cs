@@ -8,8 +8,8 @@ namespace Deck_of_Cards
 {
     class Card
     {
-            string face;
-            string suit;
+            public string face;
+            public string suit;
             public Card(string suit, string face)
             {
                 this.suit = suit;

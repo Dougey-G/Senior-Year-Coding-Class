@@ -11,7 +11,7 @@ namespace Deck_of_Cards
         static void Main(string[] args)
         {
             string result;
-
+            Card c = new Card("x", "x");
             Deck myDeck = new Deck();
             do
             {
@@ -32,15 +32,20 @@ namespace Deck_of_Cards
 
                 if (result == "2")
                 {
-                    myDeck.Draw();
+                    c = myDeck.Draw();
                     Console.WriteLine();
                 }
 
                 if (result == "3")
                 {
-                    myDeck.Discard(new Card("suit", "face"));
-                    Console.WriteLine("Card discarded");
-                    Console.WriteLine();
+                    if (c.face != "x")
+                    {
+                        myDeck.Discard(c);
+                        c.Print();
+                        Console.WriteLine("discarded");
+                        Console.WriteLine();
+                        c = null;
+                    }
                 }
 
                 if (result == "4")

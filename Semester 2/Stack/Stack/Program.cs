@@ -33,7 +33,7 @@ namespace Stack
 
                 if (result == "2")
                 {
-                    int Popval = myStack.Pop();
+                    int Popval = myStack-.Pop();
                     Console.WriteLine("The top number in the stack is a " + Popval);
                     Console.WriteLine();
                 }
