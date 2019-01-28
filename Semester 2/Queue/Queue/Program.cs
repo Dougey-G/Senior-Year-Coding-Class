@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Stack
+namespace Queue
 {
     class Program
     {
@@ -12,11 +12,11 @@ namespace Stack
         {
             string result;
 
-            Stack myStack = new Stack();
+            Queue myQueue = new Queue();
             do
             {
-                Console.WriteLine("1. Push");
-                Console.WriteLine("2. Pop");
+                Console.WriteLine("1. EnQueue");
+                Console.WriteLine("2. DeQueue");
                 Console.WriteLine("3. Peek");
                 Console.WriteLine("4. Print");
                 Console.WriteLine("5. Exit");
@@ -27,30 +27,29 @@ namespace Stack
                 {
                     Console.WriteLine("Please enter number you would like to add.");
                     int Add = int.Parse(Console.ReadLine());
-                    myStack.Push(Add);
+                    myQueue.EnQueue(Add);
                     Console.WriteLine();
                 }
 
                 if (result == "2")
                 {
-                    int Popval = myStack.Pop();
-                    Console.WriteLine("The top number in the stack is a " + Popval);
+                    int Popval = myQueue.DeQueue();
+                    Console.WriteLine("The top number in the queue is a " + Popval);
                     Console.WriteLine();
                 }
 
                 if (result == "3")
                 {
-                    Console.WriteLine("The top value of the stack is " + myStack.Peek());
+                    Console.WriteLine("The top value of the queue is " + myQueue.Peek());
                     Console.WriteLine();
                 }
 
                 if (result == "4")
                 {
-                    myStack.Print();
+                    myQueue.Print();
                     Console.WriteLine();
                 }
             } while (result != "5");
-
         }
     }
 }
