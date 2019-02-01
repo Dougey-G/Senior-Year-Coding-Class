@@ -6,46 +6,48 @@ using System.Threading.Tasks;
 
 namespace Queue
 {
-    class Queue
+    class Queue<T> : IEmptyable, IPrintable, ICountable where T : IComparable<T>, IPrintable
     {
-        
-        List<int> holder = new List<int>();
-
-        public Queue()
+        public void Count()
         {
-
+            throw new NotImplementedException();
         }
 
-        //EnQueue
-        public void EnQueue(int val)
+        public void Empty()
         {
-            holder.Add(val);
-        }
-
-        //DeQueue
-        public int DeQueue()
-        {
-            // holds the number, then deletes the "top" or first number from the queue
-            int Top = holder[0];
-            holder.RemoveAt(0);
-
-            return Top;
-        }
-
-        //Peek
-        public int Peek()
-        {
-            int Top = holder[0];
-            return Top;
+            throw new NotImplementedException();
         }
 
         //Print
         public void Print()
         {
-            for (int i = 0; i < holder.Count; i++)
+            foreach (T t in queue)
             {
-                Console.WriteLine("The queue currently has " + holder[i]);
+                t.Print();
             }
+        }
+
+        List<T> queue = new List<T>();
+
+        ////EnQueue
+        public void EnQueue(T val)
+        {
+            queue.Insert(0, val);
+        }
+
+        //DeQueue
+        public T DeQueue()
+        {
+            // holds the number, then deletes the "top" or first number from the queue
+            T temp = queue[queue.Count - 1];
+            queue.RemoveAt(queue.Count - 1);
+            return temp;
+        }
+
+        //Peek
+        public T Peek()
+        {
+            return queue[queue.Count - 1];
         }
     }
 }

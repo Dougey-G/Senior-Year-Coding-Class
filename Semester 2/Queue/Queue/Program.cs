@@ -12,7 +12,7 @@ namespace Queue
         {
             string result;
 
-            Queue myQueue = new Queue();
+            Queue<Currencies> myQueue = new Queue<Currencies>();
             do
             {
                 Console.WriteLine("1. EnQueue");
@@ -26,8 +26,7 @@ namespace Queue
                 if (result == "1")
                 {
                     Console.WriteLine("Please enter number you would like to add.");
-                    int Add = int.Parse(Console.ReadLine());
-                    myQueue.EnQueue(Add);
+                    myQueue.EnQueue(new Currencies(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine())));
                     Console.WriteLine();
                 }
 

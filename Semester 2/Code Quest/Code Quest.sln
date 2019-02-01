@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code Quest", "Code Quest\Code Quest.csproj", "{77889D38-B909-4D74-8775-85932F52E45F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77889D38-B909-4D74-8775-85932F52E45F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77889D38-B909-4D74-8775-85932F52E45F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77889D38-B909-4D74-8775-85932F52E45F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77889D38-B909-4D74-8775-85932F52E45F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D34E61E7-5745-4D92-BD5A-D5B914F6187D}
+	EndGlobalSection
+EndGlobal
