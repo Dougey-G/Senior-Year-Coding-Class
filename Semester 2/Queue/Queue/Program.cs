@@ -49,6 +49,11 @@ namespace Queue
                     Console.WriteLine();
                 }
             } while (result != "5");
+            Queue<Currencies> currencies = new Queue<Currencies>();
+            for (int i = 0; i < 10; i++)
+            {
+                currencies.EnQueue(new Currencies(rand.Next(0,100), rand.Next(0, 100)
+            }
         }
     }
 }
