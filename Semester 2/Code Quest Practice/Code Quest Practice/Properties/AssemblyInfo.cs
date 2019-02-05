@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Code Quest")]
+[assembly: AssemblyTitle("Code Quest Practice")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Code Quest")]
+[assembly: AssemblyProduct("Code Quest Practice")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("77889d38-b909-4d74-8775-85932f52e45f")]
+[assembly: Guid("94d7ff72-ba50-4f4a-95b7-c2d9fc849695")]
 
 // Version information for an assembly consists of the following four values:
 //
