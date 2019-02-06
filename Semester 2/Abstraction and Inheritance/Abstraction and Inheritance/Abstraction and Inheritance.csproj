@@ -45,8 +45,12 @@
   <ItemGroup>
     <Compile Include="Allies.cs" />
     <Compile Include="Animal.cs" />
+<<<<<<< .merge_file_a08500
+    <Compile Include="Donkey Kong.cs" />
+=======
     <Compile Include="DonkeyKong.cs" />
     <Compile Include="Enemy.cs" />
+>>>>>>> .merge_file_a12892
     <Compile Include="Epona.cs" />
     <Compile Include="Mario.cs" />
     <Compile Include="Octoomba.cs" />
