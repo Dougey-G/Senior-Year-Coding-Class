@@ -27,10 +27,57 @@ namespace Code_Quest_Practice
             for (int i = 0; i < file.Count; i++)
             {
                 Console.WriteLine(file[i]);
+                // Console.Ignore (or RemoveAt) (file[3]);
+                // Console.Ignore (or RemoveAt) (file[6]);
             }
 
+
+
             Console.ReadLine();
-            //var lastItem = integerList.Last();
+
+            //string result = Console.ReadLine();
+
+            ////for (int i = 0; i < Quarter.Count; i++)
+            //if (result == "1")
+            //{
+            //    Console.WriteLine(file[0]);
+            // Console.WriteLine(file[0] * .25);
+            //}
+
+            ////for (int i = 0; i < Dime.Count; i++)
+            //if (result == "2")
+            //{
+            //    Console.WriteLine(file[1]);
+            //    Console.WriteLine(file[1] * .10);
+            //}
+
+            ////for (int i = 0; i < Nickel.Count; i++)
+            //if (result == "3")
+            //{
+            //    Console.WriteLine(file[2]);
+            //    Console.WriteLine(file[2] * .05);
+            //}
+
+            ////for (int i = 0; i < Dime.Count; i++)
+            //if (result == "4")
+            //{
+            //    Console.WriteLine(file[4]);
+            //    Console.WriteLine(file[4] *.10);
+            //}
+
+            ////for (int i = 0; i < HalfDollar.Count; i++)
+            //if (result == "5")
+            //{
+            //    Console.WriteLine(file[5]);
+            //    Console.WriteLine(file[5] *.50);
+            //}
+
+            ////for (int i = 0; i < Penny.Count; i++)
+            //if (result == "6")
+            //{
+            //    Console.WriteLine(file[7]);
+            //    Console.WriteLine(file[7] *.01);
+            //}
 
             // Quarter, Dime, Nickel, HalfDollar, Penny
             // Quarter = .25
@@ -38,36 +85,6 @@ namespace Code_Quest_Practice
             // Nickel = .05
             // HalfDollar = .5
             // Penny = .01
-
-            //for (int i = 0; i < Quarter.Count; i++)
-            //{
-            // Console.WriteLine(file[0]);
-            //}
-
-            //for (int i = 0; i < Dime.Count; i++)
-            //{
-            // Console.WriteLine(file[1]);
-            //}
-
-            //for (int i = 0; i < Nickel.Count; i++)
-            //{
-            // Console.WriteLine(file[2]);
-            //}
-
-            //for (int i = 0; i < Dime.Count; i++)
-            //{
-            // Console.WriteLine(file[3]);
-            //}
-
-            //for (int i = 0; i < HalfDollar.Count; i++)
-            //{
-            // Console.WriteLine(file[4]);
-            //}
-
-            //for (int i = 0; i < Penny.Count; i++)
-            //{
-            // Console.WriteLine(file[5]);
-            //}
         }
     }
 }
