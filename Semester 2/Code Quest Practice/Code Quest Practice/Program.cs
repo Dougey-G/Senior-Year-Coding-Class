@@ -20,71 +20,64 @@ namespace Code_Quest_Practice
                 {
                     file.Add(line);
                     //Console.WriteLine();
-                    
-                }               
+                }
             }
 
+            float total = 0;
+            
             for (int i = 0; i < file.Count; i++)
             {
-                Console.WriteLine(file[i]);
-                // Console.Ignore (or RemoveAt) (file[3]);
-                // Console.Ignore (or RemoveAt) (file[6]);
+                if (file[i].Contains("QUARTER"))
+                {
+                    file[i] = file[i].Substring(8);
+                    total += float.Parse(file[i]) * .25f;
+                }
+
+                if (file[i].Contains("DIME"))
+                {
+                    file[i] = file[i].Substring(5);
+                    total += float.Parse(file[i]) * .1f;
+                }
+
+                if (file[i].Contains("NICKEL"))
+                {
+                    file[i] = file[i].Substring(7);
+                    total += float.Parse(file[i]) * .05f;
+                }
+
+                if (file[i].Contains("HALFDOLLAR"))
+                {
+                    file[i] = file[i].Substring(11);
+                    total += float.Parse(file[i]) * .5f;
+                }
+
+                if (file[i].Contains("PENNY"))
+                {
+                    file[i] = file[i].Substring(6);
+                    total += float.Parse(file[i]) * .01f;
+                }
             }
-
-
-
+            Console.WriteLine("$" + total.ToString("#.00"));
             Console.ReadLine();
 
-            //string result = Console.ReadLine();
+            string path2 = AppDomain.CurrentDomain.BaseDirectory + "Prob02.in.txt";
+            List<string> file2 = new List<string>();
+            using (StreamReader sr = new StreamReader(path))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    file.Add(line);
+                    //Console.WriteLine();
+                }
 
-            ////for (int i = 0; i < Quarter.Count; i++)
-            //if (result == "1")
-            //{
-            //    Console.WriteLine(file[0]);
-            // Console.WriteLine(file[0] * .25);
-            //}
+                //if()
+                //{
 
-            ////for (int i = 0; i < Dime.Count; i++)
-            //if (result == "2")
-            //{
-            //    Console.WriteLine(file[1]);
-            //    Console.WriteLine(file[1] * .10);
-            //}
+                //}
 
-            ////for (int i = 0; i < Nickel.Count; i++)
-            //if (result == "3")
-            //{
-            //    Console.WriteLine(file[2]);
-            //    Console.WriteLine(file[2] * .05);
-            //}
 
-            ////for (int i = 0; i < Dime.Count; i++)
-            //if (result == "4")
-            //{
-            //    Console.WriteLine(file[4]);
-            //    Console.WriteLine(file[4] *.10);
-            //}
-
-            ////for (int i = 0; i < HalfDollar.Count; i++)
-            //if (result == "5")
-            //{
-            //    Console.WriteLine(file[5]);
-            //    Console.WriteLine(file[5] *.50);
-            //}
-
-            ////for (int i = 0; i < Penny.Count; i++)
-            //if (result == "6")
-            //{
-            //    Console.WriteLine(file[7]);
-            //    Console.WriteLine(file[7] *.01);
-            //}
-
-            // Quarter, Dime, Nickel, HalfDollar, Penny
-            // Quarter = .25
-            // Dime = .1
-            // Nickel = .05
-            // HalfDollar = .5
-            // Penny = .01
+            }
         }
     }
 }
