@@ -62,7 +62,7 @@ namespace Code_Quest_Practice
 
             string path2 = AppDomain.CurrentDomain.BaseDirectory + "Prob02.in.txt";
             List<string> file2 = new List<string>();
-            using (StreamReader sr = new StreamReader(path))
+            using (StreamReader sr = new StreamReader(path2))
             {
                 string line;
                 while ((line = sr.ReadLine()) != null)
@@ -70,43 +70,106 @@ namespace Code_Quest_Practice
                     file2.Add(line);
                     //Console.WriteLine();
                 }
-
-                //if(int or string == random)
-                //{
-                Console.WriteLine("The numbers are in random order");
-                //}
-
-                //if(int or string == file2.Count + 1 )
-                //{
-                Console.WriteLine("The numbers are in ascending order");
-                //}
-
-                //if(int or string == file2.Count - 1 )
-                //{
-                Console.WriteLine("The numbers are in descending order");
-                //}
-
-                //if(int or string != int)
-                //{
-                Console.WriteLine("The input was invalid");
-                //}
             }
+
+            for (int i = 0; i < file2.Count; i++)
+            {
+                string[] Split = file2[i].Split(' ');
+                List<int> ints = new List<int>();
+                int left;
+                int right;
+                bool asc = true;
+                bool desc = true;
+                for (int j = 0; j < Split.Length - 1; j++)
+                {
+                    if(int.TryParse(Split[j], out left) == false)
+                    {
+                        Console.WriteLine("The input was invalid");
+                        break;
+                    }
+
+                    if (int.TryParse(Split[j + 1], out right) == false)
+                    {
+                        Console.WriteLine("The input was invalid");
+                        break;
+                    }
+
+                    if (left < right)
+                    {
+                        desc = false;
+                    }
+
+                    if (left > right)
+                    {
+                        asc = false;
+                    }
+                }
+                if (asc == false)
+                {
+                    Console.WriteLine("It's descending");
+                }
+
+                if (desc == false)
+                {
+                    Console.WriteLine("It's ascending");
+                }
+
+                if (desc == false && asc == false)
+                {
+                    Console.WriteLine("It's in a random order");
+                }
+            }
+
+
+            //if (int or string == random)
+            //{
+            //    Console.WriteLine("The numbers are in random order");
+            //}
+
+            //if (int or string == file2.Count + 1 )
+            //{
+            //    Console.WriteLine("The numbers are in ascending order");
+            //}
+
+            //if (int or string == file2.Count - 1 )
+            //{
+            //    Console.WriteLine("The numbers are in descending order");
+            //}
+
+            //if (int or string != int)
+            //{
+
+            //}
+
+            Console.ReadLine();
+
 
             string path3 = AppDomain.CurrentDomain.BaseDirectory + "Prob03.in.txt";
             List<string> file3 = new List<string>();
             using (StreamReader sr = new StreamReader(path))
             {
+                int DecoderCount = 0;
+                string decoder = "";
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    file3.Add(line);
+                    // file3.Add(line);
+                    if (DecoderCount == 0)
+                    {
+                        decoder = line;
+                        DecoderCount++;
+                    }
+                    else
+                    {
+                        Console.WriteLine(decoder[0]);
+                    }
                     //Console.WriteLine();
                 }
             }
             // Could you please check this part?
             {
                 //char[] Decoder = string(file3);
-                int[] DecoderII = new int[26];
+                //int[] DecoderII = new int[26];
                 // string(file3) = new int[26];
                 //[num + 1]
                 //string.SubString();
@@ -136,6 +199,7 @@ namespace Code_Quest_Practice
             //    // int z = 26;
             //    //Decoder("z" == 26);
             //}
+
 
             string path4 = AppDomain.CurrentDomain.BaseDirectory + "Prob03.in.txt";
             List<string> file4 = new List<string>();
