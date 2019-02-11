@@ -102,34 +102,40 @@ namespace Code_Quest_Practice
                     file3.Add(line);
                     //Console.WriteLine();
                 }
-
-                // Could you please check this part?
-
-                for (int i = 0; i < 26; i++)
-                {
-                    // int a = 0;
-                    //Decoder("a" == 0);
-                    //...
-                    // int m = 13;
-                    //Decoder("m" == 13);
-                    //...
-                    // int z = 26;
-                    //Decoder("z" == 26);
-                }
-
-                // Could you also please check this part?
-
-                //public static string IntToLetters(int value)
-                //{
-                //    string decoder = string.Empty;
-                //    while (value >= 0)
-                //    {
-                //        decoder = (char)('a' + value % 26) + result;
-                //        value-- == 26;
-                //    }
-                //    return result;
-                //}
             }
+            // Could you please check this part?
+            {
+                //char[] Decoder = string(file3);
+                int[] DecoderII = new int[26];
+                // string(file3) = new int[26];
+                //[num + 1]
+                //string.SubString();
+            }
+
+            //for (int i = 0; i < 26; i++)
+            //{
+            //    // int a = 0;
+            //    //Decoder("a" == 0);
+            //    //...
+            //    // int m = 13;
+            //    //Decoder("m" == 13);
+            //    //...
+            //    // int z = 26;
+            //    //Decoder("z" == 26);
+            //}
+
+            // Could you also please check this part?
+            //for (int i = 0; i < 26; i++)
+            //{
+            //    // int a = 0;
+            //    //Decoder("a" == 0);
+            //    //...
+            //    // int m = 13;
+            //    //Decoder("m" == 13);
+            //    //...
+            //    // int z = 26;
+            //    //Decoder("z" == 26);
+            //}
 
             string path4 = AppDomain.CurrentDomain.BaseDirectory + "Prob03.in.txt";
             List<string> file4 = new List<string>();
@@ -144,13 +150,24 @@ namespace Code_Quest_Practice
 
                 // Could you also please check this part too?
 
-                //factorials = n!;
+                //n! = factorials;
 
-                //for (int i = 0; i < factorials.Length; i++)
+                //for (int i = lowest; i <= highest; i++)
                 //{
-                // i <= n!
-                // n! = n * n<=n
-                // factorials = number chosen * number chosen <= number chosen
+                // i * i = n!
+                //}
+
+                //string[] line = File.ReadAllLines(path4);
+                foreach (string s in file4)
+                {
+                    Console.WriteLine(file4);
+                }
+
+                //string[] ReadAllLines(string path, System.Text.Encoding encoding);
+
+                //for (int i = 0; i < array.Length; i++)
+                //{
+                //    sequence[i] = Convert.ToInt32(array[i].ToString());
                 //}
 
                 // You can ignore examples, just a helpful tip for me
