@@ -93,7 +93,7 @@ namespace Code_Quest_Practice
                         Console.WriteLine("The input was invalid");
                         break;
                     }
-
+            
                     if (left < right)
                     {
                         desc = false;
@@ -104,43 +104,25 @@ namespace Code_Quest_Practice
                         asc = false;
                     }
                 }
-                if (asc == false)
-                {
-                    Console.WriteLine("It's descending");
-                }
+                //bool invalid = true;
+                //if (invalid == false)
+                //{
+                    if (asc == false)
+                    {
+                        Console.WriteLine("It's descending");
+                    }
 
-                if (desc == false)
-                {
-                    Console.WriteLine("It's ascending");
-                }
+                    if (desc == false)
+                    {
+                        Console.WriteLine("It's ascending");
+                    }
 
-                if (desc == false && asc == false)
-                {
-                    Console.WriteLine("It's in a random order");
-                }
+                    if (desc == false && asc == false)
+                    {
+                        Console.WriteLine("It's in a random order");
+                    }
+                //}
             }
-
-
-            //if (int or string == random)
-            //{
-            //    Console.WriteLine("The numbers are in random order");
-            //}
-
-            //if (int or string == file2.Count + 1 )
-            //{
-            //    Console.WriteLine("The numbers are in ascending order");
-            //}
-
-            //if (int or string == file2.Count - 1 )
-            //{
-            //    Console.WriteLine("The numbers are in descending order");
-            //}
-
-            //if (int or string != int)
-            //{
-
-            //}
-
             Console.ReadLine();
 
 
