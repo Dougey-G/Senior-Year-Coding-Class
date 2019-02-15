@@ -80,6 +80,7 @@ namespace Code_Quest_Practice
                 int right;
                 bool asc = true;
                 bool desc = true;
+                bool invalid = true;
                 for (int j = 0; j < Split.Length - 1; j++)
                 {
                     if(int.TryParse(Split[j], out left) == false)
@@ -105,7 +106,7 @@ namespace Code_Quest_Practice
                     }
                 }
 
-                bool invalid = true;
+                
                 if (invalid == false)
                 {
                     if (asc == false)
