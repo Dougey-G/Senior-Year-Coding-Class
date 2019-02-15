@@ -104,9 +104,10 @@ namespace Code_Quest_Practice
                         asc = false;
                     }
                 }
-                //bool invalid = true;
-                //if (invalid == false)
-                //{
+
+                bool invalid = true;
+                if (invalid == false)
+                {
                     if (asc == false)
                     {
                         Console.WriteLine("It's descending");
@@ -121,10 +122,9 @@ namespace Code_Quest_Practice
                     {
                         Console.WriteLine("It's in a random order");
                     }
-                //}
+                }
             }
             Console.ReadLine();
-
 
             string path3 = AppDomain.CurrentDomain.BaseDirectory + "Prob03.in.txt";
             List<string> file3 = new List<string>();
