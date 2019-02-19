@@ -80,17 +80,19 @@ namespace Code_Quest_Practice
                 int right;
                 bool asc = true;
                 bool desc = true;
-                bool invalid = true;
+                bool invalid = false;
                 for (int j = 0; j < Split.Length - 1; j++)
                 {
                     if(int.TryParse(Split[j], out left) == false)
                     {
+                        invalid = true;
                         Console.WriteLine("The input was invalid");
                         break;
                     }
 
                     if (int.TryParse(Split[j + 1], out right) == false)
                     {
+                        invalid = true;
                         Console.WriteLine("The input was invalid");
                         break;
                     }
@@ -105,23 +107,22 @@ namespace Code_Quest_Practice
                         asc = false;
                     }
                 }
-
                 
                 if (invalid == false)
                 {
-                    if (asc == false)
+                    if (desc == false && asc == false)
+                    {
+                        Console.WriteLine("It's in a random order");
+                    }
+
+                    else if(asc == false)
                     {
                         Console.WriteLine("It's descending");
                     }
 
-                    if (desc == false)
+                    else if(desc == false)
                     {
                         Console.WriteLine("It's ascending");
-                    }
-
-                    if (desc == false && asc == false)
-                    {
-                        Console.WriteLine("It's in a random order");
                     }
                 }
             }
@@ -195,14 +196,14 @@ namespace Code_Quest_Practice
                     //Console.WriteLine();
                 }
 
-                // Could you also please check this part too?
+                // 5! = 5* 4 * 3 * 2 * 1
+                int lowest = ;
+                int highest = ;
 
-                //n! = factorials;
-
-                //for (int i = lowest; i <= highest; i++)
-                //{
-                // i * i = n!
-                //}
+                for (int i = lowest; i <= highest; i++)
+                {
+                    i* i = n
+                }
 
                 //string[] line = File.ReadAllLines(path4);
                 foreach (string s in file4)
