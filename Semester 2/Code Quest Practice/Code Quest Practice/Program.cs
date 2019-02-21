@@ -185,7 +185,7 @@ namespace Code_Quest_Practice
             //}
 
 
-            string path4 = AppDomain.CurrentDomain.BaseDirectory + "Prob03.in.txt";
+            string path4 = AppDomain.CurrentDomain.BaseDirectory + "Prob04.in.txt";
             List<string> file4 = new List<string>();
             using (StreamReader sr = new StreamReader(path))
             {
@@ -197,13 +197,24 @@ namespace Code_Quest_Practice
                 }
 
                 // 5! = 5* 4 * 3 * 2 * 1
-                int lowest = ;
-                int highest = ;
+                //int lowest = ;
+                //int highest = ;
 
-                for (int i = lowest; i <= highest; i++)
-                {
-                    i* i = n
-                }
+                //for (int i = lowest; i <= highest; i++)
+                //{
+                   
+                //}
+
+                //int numberInt = int.Parse(file4.Text);
+                //int result = numberInt;
+
+                //for (int i = 1; i < numberInt; i++)
+                //{
+                //    result = result * i;
+                //}
+
+                //file4.Text = result.ToString();
+
 
                 //string[] line = File.ReadAllLines(path4);
                 foreach (string s in file4)
