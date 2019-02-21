@@ -19,7 +19,6 @@ namespace Code_Quest_Practice
                 while ((line = sr.ReadLine()) != null)
                 {
                     file.Add(line);
-                    //Console.WriteLine();
                 }
             }
 
@@ -68,7 +67,6 @@ namespace Code_Quest_Practice
                 while ((line = sr.ReadLine()) != null)
                 {
                     file2.Add(line);
-                    //Console.WriteLine();
                 }
             }
 
@@ -83,7 +81,7 @@ namespace Code_Quest_Practice
                 bool invalid = false;
                 for (int j = 0; j < Split.Length - 1; j++)
                 {
-                    if(int.TryParse(Split[j], out left) == false)
+                    if (int.TryParse(Split[j], out left) == false)
                     {
                         invalid = true;
                         Console.WriteLine("The input was invalid");
@@ -96,7 +94,7 @@ namespace Code_Quest_Practice
                         Console.WriteLine("The input was invalid");
                         break;
                     }
-            
+
                     if (left < right)
                     {
                         desc = false;
@@ -107,7 +105,7 @@ namespace Code_Quest_Practice
                         asc = false;
                     }
                 }
-                
+
                 if (invalid == false)
                 {
                     if (desc == false && asc == false)
@@ -115,12 +113,12 @@ namespace Code_Quest_Practice
                         Console.WriteLine("It's in a random order");
                     }
 
-                    else if(asc == false)
+                    else if (asc == false)
                     {
                         Console.WriteLine("It's descending");
                     }
 
-                    else if(desc == false)
+                    else if (desc == false)
                     {
                         Console.WriteLine("It's ascending");
                     }
@@ -128,116 +126,34 @@ namespace Code_Quest_Practice
             }
             Console.ReadLine();
 
-            string path3 = AppDomain.CurrentDomain.BaseDirectory + "Prob03.in.txt";
-            List<string> file3 = new List<string>();
-            using (StreamReader sr = new StreamReader(path))
-            {
-                int DecoderCount = 0;
-                string decoder = "";
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    // file3.Add(line);
-                    if (DecoderCount == 0)
-                    {
-                        decoder = line;
-                        DecoderCount++;
-                    }
-                    else
-                    {
-                        Console.WriteLine(decoder[0]);
-                    }
-                    //Console.WriteLine();
-                }
-            }
-            // Could you please check this part?
-            {
-                //char[] Decoder = string(file3);
-                //int[] DecoderII = new int[26];
-                // string(file3) = new int[26];
-                //[num + 1]
-                //string.SubString();
-            }
-
-            //for (int i = 0; i < 26; i++)
-            //{
-            //    // int a = 0;
-            //    //Decoder("a" == 0);
-            //    //...
-            //    // int m = 13;
-            //    //Decoder("m" == 13);
-            //    //...
-            //    // int z = 26;
-            //    //Decoder("z" == 26);
-            //}
-
-            // Could you also please check this part?
-            //for (int i = 0; i < 26; i++)
-            //{
-            //    // int a = 0;
-            //    //Decoder("a" == 0);
-            //    //...
-            //    // int m = 13;
-            //    //Decoder("m" == 13);
-            //    //...
-            //    // int z = 26;
-            //    //Decoder("z" == 26);
-            //}
-
-
             string path4 = AppDomain.CurrentDomain.BaseDirectory + "Prob04.in.txt";
             List<string> file4 = new List<string>();
-            using (StreamReader sr = new StreamReader(path))
+            using (StreamReader sr = new StreamReader(path4))
             {
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
                     file4.Add(line);
-                    //Console.WriteLine();
                 }
 
-                // 5! = 5* 4 * 3 * 2 * 1
-                //int lowest = ;
-                //int highest = ;
+                for (int i = 0; i < file4.Count; i++)
+                {
+                    int numberInt = int.Parse(file4[i]);
+                    int result = numberInt;
 
-                //for (int i = lowest; i <= highest; i++)
-                //{
-                   
-                //}
+                    for (int j = 1; j < numberInt; j++)
+                    {
+                        result = result * j;
+                    }
 
-                //int numberInt = int.Parse(file4.Text);
-                //int result = numberInt;
+                    file4[i] = result.ToString();
+                }
 
-                //for (int i = 1; i < numberInt; i++)
-                //{
-                //    result = result * i;
-                //}
-
-                //file4.Text = result.ToString();
-
-
-                //string[] line = File.ReadAllLines(path4);
                 foreach (string s in file4)
                 {
-                    Console.WriteLine(file4);
+                    Console.WriteLine(s);
                 }
-
-                //string[] ReadAllLines(string path, System.Text.Encoding encoding);
-
-                //for (int i = 0; i < array.Length; i++)
-                //{
-                //    sequence[i] = Convert.ToInt32(array[i].ToString());
-                //}
-
-                // You can ignore examples, just a helpful tip for me
-                //Examples
-                //1! = 1*1 = 1
-                //...
-                //4! = 4*3*2*1 = 24
-                //...
-                //25! = 25*24*23*22*21*20*19*18*17*16*15*14*13*12*11*10*9*8*7*6*5*4*3*2*1 = 1.5511e + 25
-                //...
-                //50! = 50*49*48*47*46*45*44*43*42*41*40*39*38*37*36*35*34*33*32*31*30*29*28*27*26*25*24*23*22*21*20*19*18*17*16*15*14*13*12*11*10*9*8*7*6*5*4*3*2*1 = 3.0414e + 64
+                Console.ReadLine();
             }
         }
     }
