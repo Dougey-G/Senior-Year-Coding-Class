@@ -16,31 +16,20 @@ namespace LINQ_Problems
 
             //string result = Console.ReadLine();
 
-            // Console.WriteLine("Which Store just survived Bankruptcy, within the last month?");
             // string[] stores = { "Sears" , "Toys R Us", "Radio Shack"};
 
             //var query = stores.Select((stores, index) => new {index, str = stores.Substring(0, index) });
 
-            // if (result == "Sears")
-            // {
-            // Console.WriteLine("You are right!");
-            // }
+           string[] systems = { "Nintendo Switch", "Nintendo Wii U", "Nintendo Wii", "Nintendo Game Cube", "Nintendo 64", "Super Nintendo ES", "Sony PS1", "Sony PS2", "SonyPSP", "Sony PS3", "Sony PSVita", "Sony PS4", "Microsoft Xbox", "Microsoft Xbox 360", "Microsoft Xbox One"};
 
-            // if (result == "toys r us")
-            // {
-            // Console.WriteLine("Sorry, try again");
-            // }
+            //var query = systems.Where(system => system.Substring(0, 8) == "Nintendo");
+            var query = systems.Where(system => system.Contains("Nintendo"));
 
-            // if (result == "radio shack")
-            // {
-            // Console.WriteLine("Sorry, try again");
-            // }
-
-            string[] systems = { " Nintendo Switch", "Wii U", "Wii", "GameCube", "Nintendo 64", "Super NES"};
-
-            var query = systems.Select((system, index) => new { index, str = fruit.Substring(0, index) });
-
-            foreach (var obj in query)
+            foreach (string system in query)
+            { 
+                Console.WriteLine(system);
+            Console.ReadLine();
+            }
         }
     }
 }
