@@ -136,23 +136,32 @@ namespace Sudoku
 
             //Remove from the list all elements in the row
 
-            //if (ValidValues = "1","2","3","4","5","6","7","8","9" in row)
-            //{
-
-            //}
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    Console.WriteLine(Board[i,j]);
+                    ValidValues.Remove(Board[i, j]);
+                }
+            }
 
             //Remove from the list all elements in the column
 
-            //if (ValidValues = "1","2","3","4","5","6","7","8","9" in col)
+            //for (int i = 0; i < 9; i++)
             //{
-            //ValidValues.RemoveAt("1","2","3","4","5","6","7","8","9");
+            //    for (int j = 0; j < 9; j++)
+            //    {
+            //        Console.WriteLine(Board[i, j]);
+            //        ValidValues.Remove(Board[i, j]);
+            //    }
             //}
 
             //remove from the list all elements in the box
 
             //return the list
 
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return ValidValues;
         }
 
         /// <summary>
