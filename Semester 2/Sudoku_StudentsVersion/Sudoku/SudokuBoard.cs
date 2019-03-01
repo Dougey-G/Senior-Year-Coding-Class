@@ -59,6 +59,17 @@ namespace Sudoku
                     file.Add(line);
                 }
             }
+            Random rand = new Random();
+           string puzzles = file[rand.Next(0, file.Count)];
+            int count = 0;
+            for (int i = 0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                   Board[i, j] = puzzles[count];
+                   count = count + 1;
+                }
+            }
             throw new NotImplementedException();
         }
 
@@ -102,8 +113,8 @@ namespace Sudoku
 
             //Check all rows in the board, make sure they contain ONLY values 1-9. No duplicates, no exclusions
 
-            //Check all boxes in the board, make sure they contain ONLY values 1-9. No duplicates, no exclusions
-            throw new NotImplementedException();
+            //Check all boxes in the board, make sure they contain ONLY values 1-9. No duplicates, no exclusion
+            return true;
         }
 
         /// <summary>
@@ -138,10 +149,24 @@ namespace Sudoku
 
             for (int i = 0; i < 9; i++)
             {
-                for (int j = 0; j < 9; j++)
+                    Console.WriteLine(Board[row, i]);
+                    ValidValues.Remove(Board[row, i]);
+            }
+
+            for (int j = 0; j < 9; j++)
+            {
+                Console.WriteLine(Board[j, col]);
+                ValidValues.Remove(Board[j, col]);
+            }
+
+            int sx = row - row % 3;
+            int sy = col - col % 3;
+
+            for (int i = sx; i < sx + 3; i++)
+            {
+                for (int j = sy; j < sy + 3; j++)
                 {
-                    Console.WriteLine(Board[i,j]);
-                    ValidValues.Remove(Board[i, j]);
+                    ValidValues.Remove(Board[sx, sy]);
                 }
             }
 
@@ -151,8 +176,8 @@ namespace Sudoku
             //{
             //    for (int j = 0; j < 9; j++)
             //    {
-            //        Console.WriteLine(Board[i, j]);
-            //        ValidValues.Remove(Board[i, j]);
+            //        Console.WriteLine(Board[j, i]);
+            //        ValidValues.Remove(Board[j, i]);
             //    }
             //}
 
