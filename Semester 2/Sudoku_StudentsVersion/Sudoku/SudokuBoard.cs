@@ -69,8 +69,8 @@ namespace Sudoku
                    Board[i, j] = puzzles[count];
                    count = count + 1;
                 }
+               //Console.WriteLine("numbers" + count + "are already used");
             }
-            throw new NotImplementedException();
         }
 
 
@@ -106,6 +106,13 @@ namespace Sudoku
                     {
                         return false;
                     }
+                }
+                for (int y = 0; y < 9; y++)
+                {
+                    // if(numbers[i] == i - 1)
+                    //{
+                        //return false;
+                    //}
                 }
             }
 
@@ -171,16 +178,6 @@ namespace Sudoku
             }
 
             //Remove from the list all elements in the column
-
-            //for (int i = 0; i < 9; i++)
-            //{
-            //    for (int j = 0; j < 9; j++)
-            //    {
-            //        Console.WriteLine(Board[j, i]);
-            //        ValidValues.Remove(Board[j, i]);
-            //    }
-            //}
-
             //remove from the list all elements in the box
 
             //return the list
