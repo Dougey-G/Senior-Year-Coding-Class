@@ -60,16 +60,16 @@ namespace Sudoku
                 }
             }
             Random rand = new Random();
-           string puzzles = file[rand.Next(0, file.Count)];
+            string puzzles = file[rand.Next(0, file.Count)];
             int count = 0;
             for (int i = 0; i < 9; i++)
             {
                 for (int j = 0; j < 9; j++)
                 {
-                   Board[i, j] = puzzles[count];
-                   count = count + 1;
+                    Board[i, j] = puzzles[count];
+                    count = count + 1;
                 }
-               //Console.WriteLine("numbers" + count + "are already used");
+                //Console.WriteLine("numbers" + count + "are already used");
             }
         }
 
@@ -107,13 +107,11 @@ namespace Sudoku
                         return false;
                     }
                 }
-                for (int y = 0; y < 9; y++)
-                {
-                    // if(numbers[i] == i - 1)
-                    //{
-                        //return false;
-                    //}
-                }
+
+                //if (numbers == false)
+                //{
+                //    Console.WriteLine(Board + row(i) + col(j));
+                //}
             }
 
             //Check all columns in the board, make sure they contain ONLY values 1-9. No duplicates, no exclusions
@@ -156,15 +154,17 @@ namespace Sudoku
 
             for (int i = 0; i < 9; i++)
             {
-                    Console.WriteLine(Board[row, i]);
-                    ValidValues.Remove(Board[row, i]);
+                ValidValues.Remove(Board[row, i]);
             }
+
+            //Remove from the list all elements in the column
 
             for (int j = 0; j < 9; j++)
             {
-                Console.WriteLine(Board[j, col]);
                 ValidValues.Remove(Board[j, col]);
             }
+
+            //Remove from the list all elements in the box
 
             int sx = row - row % 3;
             int sy = col - col % 3;
@@ -176,10 +176,6 @@ namespace Sudoku
                     ValidValues.Remove(Board[sx, sy]);
                 }
             }
-
-            //Remove from the list all elements in the column
-            //remove from the list all elements in the box
-
             //return the list
 
             //throw new NotImplementedException();

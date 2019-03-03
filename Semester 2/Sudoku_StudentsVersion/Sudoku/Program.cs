@@ -179,7 +179,7 @@ namespace Sudoku
         /// <returns>True if the board was solved, false otherwise.</returns>
         public static bool SolveBoardIterativelyWithQueue(ref SudokuBoard board)
         {
-            Queue<SudokuBoard> boards = new Queue<SudokuBoard>();
+           // Queue<SudokuBoard> boards = new Queue<SudokuBoard>();
             throw new NotImplementedException();
 
             //As long as there is a board in the queue, do the following:
