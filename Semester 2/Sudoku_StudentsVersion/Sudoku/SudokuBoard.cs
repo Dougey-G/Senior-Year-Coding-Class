@@ -110,7 +110,7 @@ namespace Sudoku
 
                 //if (numbers == false)
                 //{
-                //    Console.WriteLine(Board + row(i) + col(j));
+                    //Console.WriteLine(Board + "Error on row " + row(i) + " and " + " column " + col(j));
                 //}
             }
 
