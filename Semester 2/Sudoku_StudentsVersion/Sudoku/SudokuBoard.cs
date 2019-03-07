@@ -60,7 +60,7 @@ namespace Sudoku
                 }
             }
             Random rand = new Random();
-            string puzzles = file[rand.Next(0, file.Count)];
+            string puzzles = file[rand.Next(1, file.Count)];
             int count = 0;
             for (int i = 0; i < 9; i++)
             {
@@ -71,6 +71,11 @@ namespace Sudoku
                 }
                 //Console.WriteLine("numbers" + count + "are already used");
             }
+        }
+
+        public SudokuBoard(SudokuBoard board)
+        {
+            Array.Copy(board.Board, this.Board, this.Board.Length);
         }
 
 
@@ -90,6 +95,7 @@ namespace Sudoku
         /// </returns>
         public bool VerifyBoard()
         {
+            //Checks all Rows in the board, makes sure they contain ONLY 1-9.
             for (int i = 0; i < 9; i++)
             {
                 List<int> numbers = new List<int>();
@@ -100,25 +106,60 @@ namespace Sudoku
                 }
                 numbers = numbers.OrderBy(t => t).ToList();
 
-                for (int x = 0; x < numbers.Count; x++)
+                for (int x = 0; x < 9; x++)
                 {
-                    if (numbers[i] == i + 1)
+                    if (numbers[x] != x + 1)
                     {
                         return false;
                     }
                 }
-
-                //if (numbers == false)
-                //{
-                    //Console.WriteLine(Board + "Error on row " + row(i) + " and " + " column " + col(j));
-                //}
             }
 
-            //Check all columns in the board, make sure they contain ONLY values 1-9. No duplicates, no exclusions
+            //Checks all Columns in the board, makes sure they contain ONLY 1-9.
+            for (int j = 0; j < 9; j++)
+            {
+                List<int> numbers = new List<int>();
 
-            //Check all rows in the board, make sure they contain ONLY values 1-9. No duplicates, no exclusions
+                for (int i = 0; i < 9; i++)
+                {
+                    numbers.Add(Board[i, j]);
+                }
+                numbers = numbers.OrderBy(t => t).ToList();
 
-            //Check all boxes in the board, make sure they contain ONLY values 1-9. No duplicates, no exclusion
+                for (int x = 0; x < 9; x++)
+                {
+                    if (numbers[j] != j + 1)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            //Checks all Boxes in the board, makes sure they contain ONLY 1-9.
+            for (int i = 0; i < 9; i += 3)
+            {
+                for (int j = 0; j < 9; j += 3)
+                {
+                    List<int> numbers = new List<int>();
+
+                    for (int UpperRowBox = i - i % 3; UpperRowBox < i - i % 3 + 3; UpperRowBox++)
+                    {
+                        for (int LeftColBox = j - j % 3; LeftColBox < j - j % 3 + 3; LeftColBox++)
+                        {
+                            numbers.Add(Board[UpperRowBox, LeftColBox]);
+                        }
+                    }
+                    numbers = numbers.OrderBy(t => t).ToList();
+
+                    for (int x = 0; x < 9; x++)
+                    {
+                        if (numbers[x] != x + 1)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
             return true;
         }
 
@@ -144,12 +185,7 @@ namespace Sudoku
         public List<int> FindLegalDigits(int row, int col)
         {
             //Create list of all possible digits (1-9)
-            List<int> ValidValues = new List<int>();
-            for (int i = 0; i < 9; i++)
-            {
-                ValidValues.Add(i + 1);
-            }
-
+            List<int> ValidValues = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             //Remove from the list all elements in the row
 
             for (int i = 0; i < 9; i++)
@@ -159,12 +195,14 @@ namespace Sudoku
 
             //Remove from the list all elements in the column
 
-            for (int j = 0; j < 9; j++)
+            for (int i = 0; i < 9; i++)
             {
-                ValidValues.Remove(Board[j, col]);
+                ValidValues.Remove(Board[i, col]);
             }
 
             //Remove from the list all elements in the box
+
+            List<int> numbers = new List<int>();
 
             int sx = row - row % 3;
             int sy = col - col % 3;
@@ -173,13 +211,13 @@ namespace Sudoku
             {
                 for (int j = sy; j < sy + 3; j++)
                 {
-                    ValidValues.Remove(Board[sx, sy]);
+                    ValidValues.Remove(Board[i, j]);
                 }
             }
             //return the list
 
-            //throw new NotImplementedException();
             return ValidValues;
+            //throw new NotImplementedException();
         }
 
         /// <summary>
