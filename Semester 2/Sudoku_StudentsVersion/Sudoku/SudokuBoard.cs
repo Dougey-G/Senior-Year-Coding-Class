@@ -66,18 +66,17 @@ namespace Sudoku
             {
                 for (int j = 0; j < 9; j++)
                 {
-                    Board[i, j] = puzzles[count];
+                    Board[i, j] = int.Parse(puzzles[count].ToString());
                     count = count + 1;
                 }
                 //Console.WriteLine("numbers" + count + "are already used");
             }
         }
 
-        public SudokuBoard(SudokuBoard board)
+        public SudokuBoard(SudokuBoard curboard)
         {
-            Array.Copy(board.Board, this.Board, this.Board.Length);
+            Array.Copy(curboard.Board, this.Board, this.Board.Length);
         }
-
 
         /// <summary>
         /// Checks the entire board to see if it is valid or not.

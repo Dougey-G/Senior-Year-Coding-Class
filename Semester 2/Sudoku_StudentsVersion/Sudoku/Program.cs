@@ -11,7 +11,7 @@ namespace Sudoku
         static void Main(string[] args)
         {
             int userInput = 0;
-            SudokuBoard board = new SudokuBoard();
+            SudokuBoard board = new SudokuBoard(" ");
             do
             {
                 board.PrintBoard();
