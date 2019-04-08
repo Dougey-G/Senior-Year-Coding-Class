@@ -6,8 +6,8 @@ public class Character : MonoBehaviour
 {
     public List<Vector3> teleportLocations = new List<Vector3>();
 
-    float jump = 64;
-    float speed = 2;
+    float jump = 4;
+    float speed = 1028;
 
     Vector3 velocity = new Vector3(0, 0, 0);
     Rigidbody2D rbody;
@@ -41,11 +41,6 @@ public class Character : MonoBehaviour
         {
             velocity = new Vector3(velocity.x * (1 - Time.deltaTime * 5), velocity.y, 0);
         }
-        rbody.velocity = new Vector3(Mathf.Clamp(velocity.x, -1f, 1f), Mathf.Clamp(velocity.y, -4f, 4f), 0);
-    }
-
-    public void OnClickTeleportButton()
-    {
-        transform.position = teleportLocations[Random.Range(0, teleportLocations.Count)];
+        rbody.velocity = new Vector3(Mathf.Clamp(velocity.x, 5f, 5f), Mathf.Clamp(velocity.y, -4f, 4f), 0);
     }
 }
