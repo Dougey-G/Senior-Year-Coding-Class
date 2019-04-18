@@ -8,7 +8,7 @@ public class Character : MonoBehaviour
 
     float jump = 4;
     float speed = 100;
-    float speed2 = 10;
+    float speed2 = 100;
 
     Vector3 velocity = new Vector3(0, 0, 0);
     Rigidbody2D rbody;
