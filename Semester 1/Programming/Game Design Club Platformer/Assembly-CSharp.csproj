@@ -65,10 +65,10 @@
     <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\Goomba.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/171282/OneDrive - Academy District 20/Programming/Game Design Club Platformer/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/171282/Documents/Senior-Year-Coding-Class/Semester 1/Programming/Game Design Club Platformer/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/171282/OneDrive - Academy District 20/Programming/Game Design Club Platformer/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/171282/Documents/Senior-Year-Coding-Class/Semester 1/Programming/Game Design Club Platformer/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
