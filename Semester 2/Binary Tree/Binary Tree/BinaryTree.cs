@@ -8,6 +8,7 @@ namespace Binary_Tree
 {
     class BinaryTree
     {
+        public char Value { get; set; }
         private Node Root { get; set; }
         public int Height { get { return Root != null ? Root.Height : 0; } }
         public int Count { get { return Root != null ? CountRecursive(Root) : 0; } }
@@ -17,7 +18,7 @@ namespace Binary_Tree
             BinaryTreePrinter.PrintNode(Root);
         }
 
-        private int CountRecursive(Node r)
+        private int CountRecursive(Node Value)
         {
             throw new NotImplementedException();
         }
@@ -56,15 +57,45 @@ namespace Binary_Tree
 
         }
 
-        public bool Remove(char r)
+        public void Remove(char Value)
         {
-            throw new NotImplementedException();
+            Root = Remove(Root, Value);
         }
 
-        private bool Remove(Node R, char r)
+        private Node Remove(Node R, char Value)
         {
-            throw new NotImplementedException();
+            if (Root == null)
+                return R;
+
+            if (Value < R.Value)
+                R.LeftChild = Remove(R.LeftChild, Value);
+            else if (Value > R.Value)
+                R.RightChild = Remove(R.RightChild, Value);
+
+            else
+            {
+                if (R.LeftChild == null)
+                    return R.RightChild;
+                else if (R.RightChild == null)
+                    return R.LeftChild;
+
+                Node temp = Value.RightChild;
+
+                char MinV = temp.Value;
+                while(temp.LeftChild != null)
+                {
+                    MinV = temp.LeftChild.Value;
+                    temp = temp.LeftChild;
+                }
+
+                R.Value = MinV(R.RightChild);
+
+                R.RightChild = Remove(R.RightChild, R.Value);
+            }
+            return R;
         }
+
+        
 
         public bool Search(char s)
         {
@@ -76,34 +107,49 @@ namespace Binary_Tree
             throw new NotImplementedException();
         }
 
-        public bool PreOrderPrint()
+        public void PreOrderPrint()
         {
-            throw new NotImplementedException();
+            PreOrderPrint(Root);
         }
 
-        private bool PreOrderPrint(Node P)
+        private void PreOrderPrint(Node P)
         {
-            throw new NotImplementedException();
+            if (P != null)
+            {
+                PreOrderPrint(P.LeftChild);
+                Console.Write(P.Value + " ");
+                PreOrderPrint(P.RightChild);
+            }
         }
 
         public void InOrderPrint()
         {
-
+            InOrderPrint(Root);
         }
 
         private void InOrderPrint(Node I)
         {
-
+            if (I != null)
+            {
+                InOrderPrint(I.LeftChild);
+                Console.Write(I.Value + " ");
+                InOrderPrint(I.RightChild);
+            }
         }
 
         public void PostOrderPrint()
         {
-
+            PostOrderPrint(Root);
         }
 
         private void PostOrderPrint(Node Po)
         {
-
+            if (Po != null)
+            {
+                PostOrderPrint(Po.LeftChild);
+                Console.Write(Po.Value + " ");
+                PostOrderPrint(Po.RightChild);
+            }
         }
     }
 }
