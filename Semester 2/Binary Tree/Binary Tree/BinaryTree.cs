@@ -62,15 +62,15 @@ namespace Binary_Tree
             Root = Remove(Root, Value);
         }
 
-        private Node Remove(Node R, char Value)
+        private Node Remove(Node R, char Val)
         {
             if (Root == null)
                 return R;
 
-            if (Value < R.Value)
-                R.LeftChild = Remove(R.LeftChild, Value);
-            else if (Value > R.Value)
-                R.RightChild = Remove(R.RightChild, Value);
+            if (Val < R.Value)
+                R.LeftChild = Remove(R.LeftChild, Val);
+            else if (Val > R.Value)
+                R.RightChild = Remove(R.RightChild, Val);
 
             else
             {
@@ -79,32 +79,56 @@ namespace Binary_Tree
                 else if (R.RightChild == null)
                     return R.LeftChild;
 
-                Node temp = Value.RightChild;
-
-                char MinV = temp.Value;
-                while(temp.LeftChild != null)
-                {
-                    MinV = temp.LeftChild.Value;
-                    temp = temp.LeftChild;
-                }
-
                 R.Value = MinV(R.RightChild);
-
-                R.RightChild = Remove(R.RightChild, R.Value);
+                R.RightChild = Remove(R.RightChild, R.Value);                
             }
             return R;
         }
-
         
+        public char MinV(Node Root)
+        {
+            char MinV = Root.Value;
+            while (Root.LeftChild != null)
+            {
+                MinV = Root.LeftChild.Value;
+                Root = Root.LeftChild;
+            }
+            return MinV;
+        }        
 
         public bool Search(char s)
         {
-            throw new NotImplementedException();
+            if (Root == null)
+            {
+                return false;
+            }
+
+            else
+            {
+                return Search(Root, s);
+            }
         }
 
         private bool Search(Node S, char s)
         {
-            throw new NotImplementedException();
+            if (s > S.Value && S.RightChild != null)
+            {
+                return Search(S.RightChild, s);
+            }
+            else if (s > S.Value && S.LeftChild != null)
+            {
+                return Search(S.LeftChild, s);
+            }
+
+            if(s == S.Value)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
         }
 
         public void PreOrderPrint()
@@ -116,8 +140,8 @@ namespace Binary_Tree
         {
             if (P != null)
             {
-                PreOrderPrint(P.LeftChild);
                 Console.Write(P.Value + " ");
+                PreOrderPrint(P.LeftChild);
                 PreOrderPrint(P.RightChild);
             }
         }
@@ -147,8 +171,8 @@ namespace Binary_Tree
             if (Po != null)
             {
                 PostOrderPrint(Po.LeftChild);
-                Console.Write(Po.Value + " ");
                 PostOrderPrint(Po.RightChild);
+                Console.Write(Po.Value + " ");
             }
         }
     }

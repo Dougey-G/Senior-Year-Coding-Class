@@ -90,7 +90,6 @@ namespace Binary_Tree
             return Output = "found";
         }
 
-        string SearchResult = "";
         static string Output = "";
         public string Display(Node rootNode)
         {
@@ -101,23 +100,6 @@ namespace Binary_Tree
                 Display(rootNode.RightChild);
             }
             return Output;
-        }
-
-
-        private void BtnExecute_Click(object sender, EventArgs e)
-        {
-            BinarySearchTree btree = new BinarySearchTree();
-            btree.AddNode("D");
-            btree.AddNode("B");
-            btree.AddNode("F");
-            btree.AddNode("E");
-            btree.AddNode("A");
-            btree.AddNode("G");
-            btree.AddNode("C");
-            Console.WriteLine("The sorted values of the Binary Search Tree are: \r\n \r\n");
-            //txtOutput.Text += btree.Display(btree.root);
-            Display(btree.root);
-            //Node(btree.root, "A");
         }
     }
 }
