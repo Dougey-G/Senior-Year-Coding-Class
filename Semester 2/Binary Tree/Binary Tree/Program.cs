@@ -39,11 +39,13 @@ namespace Binary_Tree
                     if (tree.Search(Searched) == false)
                     {
                         Console.WriteLine("Sorry, the letter doesn't exist.");
+                        Console.WriteLine();
                     }
 
                     if (tree.Search(Searched) == true)
                     {
-                        Console.WriteLine("Yay, " + Searched + " exists");
+                        Console.WriteLine("Yay, " + Searched + " exists!");
+                        Console.WriteLine();
                     }
                     tree.Search(Searched);
                 }

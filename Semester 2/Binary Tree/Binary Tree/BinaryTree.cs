@@ -115,7 +115,7 @@ namespace Binary_Tree
             {
                 return Search(S.RightChild, s);
             }
-            else if (s > S.Value && S.LeftChild != null)
+            else if (s < S.Value && S.LeftChild != null)
             {
                 return Search(S.LeftChild, s);
             }
