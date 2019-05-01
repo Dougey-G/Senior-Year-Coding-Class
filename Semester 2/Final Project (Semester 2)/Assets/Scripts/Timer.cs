@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
-    public float time = 8.0f;
+    public float time = 4.0f;
+    public Text winText;
+    public string text;
 	// Use this for initialization
 	//void Start ()
  //   {
@@ -16,14 +18,24 @@ public class Timer : MonoBehaviour
     {
         time -= Time.deltaTime;
 
-        if (time == 0.0f)
+        if (time <= 0.0f)
         {
-            timerEnded();
+            TimerEnded();
         }
-		
-        void timerEnded()
-        {
 
-        }
+        if (time <= -4.0f)
+        {
+            EmptyString();
+        }   
 	}
+
+    void TimerEnded()
+    {
+        winText.text = text;
+    }
+
+    void EmptyString()
+    {
+        text = null;
+    }
 }
