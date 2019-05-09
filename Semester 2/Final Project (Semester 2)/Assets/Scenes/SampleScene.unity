@@ -6742,7 +6742,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Press W to Jump.
 
-    You can jump multiple times if you need to.'
+    You can jump up to 5 times, if you need to.'
 --- !u!222 &1537517370
 CanvasRenderer:
   m_ObjectHideFlags: 0

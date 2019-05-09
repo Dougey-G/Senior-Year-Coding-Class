@@ -7,7 +7,7 @@ public class Character : MonoBehaviour
     public List<Vector3> teleportLocations = new List<Vector3>();
 
     float jump = 4;
-    int jumps = 3;
+    int jumps = 5;
     float speed = 1028;
 
     Vector3 velocity = new Vector3(0, 0, 0);
@@ -35,6 +35,6 @@ public class Character : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        jumps = 3;
+        jumps = 5;
     }
 }
